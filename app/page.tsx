@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { createPublicRoomAction } from "@/lib/actions";
+import CreateRoomForm from "@/components/CreateRoomForm";
 
 export const dynamic = "force-dynamic";
 
@@ -26,18 +26,7 @@ export default async function HomePage({ searchParams }: { searchParams: { room?
         </header>
 
         <section className="grid gap-5 lg:grid-cols-[360px_1fr]">
-          <form action={createPublicRoomAction} className="rounded-[2rem] bg-zinc-950 p-5 text-white shadow-soft">
-            <h2 className="text-2xl font-black tracking-[-0.04em]">새 room 생성</h2>
-            <p className="mt-2 text-sm font-semibold text-zinc-300">생성 후 room 링크를 김하영님과 회사 사람들에게 공유하세요.</p>
-            <input
-              name="title"
-              defaultValue="맥도날드 청귤 맥피즈 브리프"
-              className="mt-5 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm outline-none placeholder:text-zinc-400"
-            />
-            <button className="mt-3 w-full rounded-2xl bg-amber-300 px-4 py-3 text-sm font-black text-zinc-950 hover:bg-amber-200">
-              room 만들기
-            </button>
-          </form>
+          <CreateRoomForm />
 
           <div className="rounded-[2rem] bg-white/85 p-5 shadow-soft ring-1 ring-zinc-200 backdrop-blur">
             <h2 className="text-2xl font-black tracking-[-0.04em]">공유 방식</h2>
