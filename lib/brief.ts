@@ -31,7 +31,7 @@ export const roomUpdateSchema = z.object({
 export const briefSaveSchema = z.object({
   roomId: z.string().uuid(),
   content: briefSchema,
-  clientUpdatedAt: z.string().datetime().optional(),
+  clientUpdatedAt: z.string().optional(),
 });
 
 export const initialBrief: BriefSections = {
